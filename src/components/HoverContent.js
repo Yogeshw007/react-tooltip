@@ -11,6 +11,7 @@ const HoverContent = ({ hovering, position }) => {
                 position={position}
                 open={hovering}
                 arrow={true}
+                size='regular'
             >
                 <button className='hover-btn'>Hover on me!</button>
             </Tooltip>

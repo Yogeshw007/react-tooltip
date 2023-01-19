@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Tooltip project with react app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [React tippy](https://www.npmjs.com/package/react-tippy)
 
 ## Available Scripts
 
