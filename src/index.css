@@ -11,12 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.position-relative{
-  position: relative;
-}
-
-.container{
+.App{
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -33,78 +28,4 @@ code {
   font-size: 1.2rem;
   text-align: center;
   cursor: pointer;
-}
-
-.tooltip{
-    cursor: pointer;
-    position: absolute;
-    background-color: black;
-    color: rgb(223, 223, 223);
-    padding: 10px;
-    width: 200px;
-    border-radius: 10px;
-}
-
-.tooltip-arrow-top{
-  top: -70px;
-  left: -40px;
-}
-
-.tooltip-arrow-top::after {
-  content: " ";
-  position: absolute;
-  top: 100%; /* At the bottom of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-}
-
-.tooltip-arrow-bottom{
-  top: 40px;
-  left: -40px;
-}
-
-.tooltip-arrow-bottom::after {
-  content: " ";
-  position: absolute;
-  bottom: 100%;  /* At the top of the tooltip */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
-}
-
-.tooltip-arrow-right{
-  top: -60%;
-  left: 140px;
-}
-
-.tooltip-arrow-right::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: 100%; /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent
-}
-
-.tooltip-arrow-left{
-  top: -60%;
-  left: -230px;
-}
-
-.tooltip-arrow-left::after {
-   content: " ";
-  position: absolute;
-  top: 50%;
-  left: 100%; /* To the right of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent black;
 }

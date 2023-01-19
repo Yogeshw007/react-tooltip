@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
-import Tooltip from './Tooltip';
+import { Tooltip } from 'react-tippy';
+import 'react-tippy/dist/tippy.css'
 
 const HoverContent = ({ hovering, position }) => {
+    console.log(position)
     return (
         <>
-            <button className='hover-btn'>Hover on me!</button>
-            {true && <Tooltip position={position} />}
+            <Tooltip
+                title="Thanks for hovering! I'm a tooltip"
+                position={position}
+                open={hovering}
+                arrow={true}
+            >
+                <button className='hover-btn'>Hover on me!</button>
+            </Tooltip>
+
         </>
     )
 }
 
 const HoverContentWrapper = (Component) => {
-    const UpdatedComponent = () => {
+
+    const UpdatedComponent = (props) => {
         const [hovering, setHovering] = useState(false);
 
         function mouseOver() {
@@ -22,8 +32,8 @@ const HoverContentWrapper = (Component) => {
             setHovering(false);
         }
 
-        return <div onMouseOver={mouseOver} onMouseOut={mouseOut} className="position-relative">
-            <Component hovering={hovering} />
+        return <div onMouseOver={mouseOver} onMouseOut={mouseOut}>
+            <Component hovering={hovering} {...props} />
         </div>
     }
 
