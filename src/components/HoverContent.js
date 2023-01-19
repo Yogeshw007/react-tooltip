@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Tooltip } from 'react-tippy';
 import 'react-tippy/dist/tippy.css'
 
-const HoverContent = ({ hovering, position }) => {
-    console.log(position)
+const HoverContent = (props) => {
+    // Hovering and position props
+    const { hovering, position } = props;
+
     return (
         <>
             <Tooltip
@@ -20,25 +22,29 @@ const HoverContent = ({ hovering, position }) => {
     )
 }
 
+// Wrapper for the Hover content component to add the mouse events
 const HoverContentWrapper = (Component) => {
 
-    const UpdatedComponent = (props) => {
+    const EnhancedComponent = (props) => {
         const [hovering, setHovering] = useState(false);
 
+        // Function to set hovering state as true on mouse over
         function mouseOver() {
             setHovering(true);
         }
 
+        // Function to set hovering state as false on mouse out 
         function mouseOut() {
             setHovering(false);
         }
 
+        // Adding mouse events to a container element and returning the enhanced component
         return <div onMouseOver={mouseOver} onMouseOut={mouseOut}>
             <Component hovering={hovering} {...props} />
         </div>
     }
 
-    return UpdatedComponent;
+    return EnhancedComponent;
 }
 
 export default HoverContentWrapper(HoverContent);
